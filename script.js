@@ -11,6 +11,8 @@ function addProvider() {
     newProvider.id = `provider-${providerCount}`;
     newProvider.innerHTML = `
         <div class="input-field">
+            <label for="provider-name-0">Provider Name:</label>
+            <input type="text" id="provider-name-0" name="provider-name">
             <input type="text" id="provider-cost-${providerCount}" name="provider-cost" placeholder="Provider Cost ($)" oninput="formatInput(this)">
             <label for="provider-cost-${providerCount}">Provider Cost ($)</label>
             <span class="error-message" id="provider-cost-${providerCount}-error"></span>
