@@ -17,7 +17,7 @@
                 <h4 class="center-align">Commission Calculator</h4>
                 <form id="calculator-form">
                     <div class="input-field">
-                        <input type="number" inputmode="numeric" id="project-price" name="project-price" required oninput="formatInput(this)">
+                        <input type="text" inputmode="numeric" id="project-price" name="project-price" required oninput="formatInput(this)">
                         <label for="project-price">Project Price ($)</label>
                         <span class="error-message" id="project-price-error"></span>
                     </div>
@@ -34,7 +34,7 @@
                         <h5>Expenses</h5>
                         <div class="provider-input" id="provider-0">
                             <div class="input-field">
-                                <input type="number" inputmode="numeric" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" onfocus="clearDefault(this)" onblur="restoreDefault(this)" id="provider-cost-0" name="provider-cost" placeholder="Provider Cost ($)" oninput="formatInput(this)">
+                                <input type="text" inputmode="numeric" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" onfocus="clearDefault(this)" onblur="restoreDefault(this)" id="provider-cost-0" name="provider-cost" placeholder="Provider Cost ($)" oninput="formatInput(this)">
                                 <label for="provider-cost-0">Provider Cost ($)</label>
                                 <span class="error-message" id="provider-cost-0-error"></span>
                             </div>
@@ -45,13 +45,13 @@
                     <a href="#" class="btn tooltipped addremove" id="add-provider" data-position="bottom" data-tooltip="Add Another Provider" onclick="addProvider()"><i class="material-icons">add</i></a>
                     
                     <div class="input-field">
-                        <input type="number" inputmode="numeric" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" id="lead-cost" name="lead-cost" required oninput="formatInput(this)">
+                        <input type="text" inputmode="numeric" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" id="lead-cost" name="lead-cost" required oninput="formatInput(this)">
                         <label for="lead-cost">Lead Cost ($)</label>
                         <span class="error-message" id="lead-cost-error"></span>
                     </div>
                     
                     <div class="input-field">
-                        <input type="number" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" inputmode="numeric" id="share-percentage" name="share-percentage" required>
+                        <input type="text" value="0" onfocus="clearDefault(this)" onblur="restoreDefault(this)" inputmode="numeric" id="share-percentage" name="share-percentage" required>
                         <label for="share-percentage">Share Percentage with Owner (%)</label>
                         <span class="error-message" id="share-percentage-error"></span>
                     </div>
