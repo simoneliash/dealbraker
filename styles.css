@@ -1,0 +1,78 @@
+body {
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.card {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h4 {
+    margin-bottom: 30px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-bottom: 1px solid #1e88e5;
+    box-shadow: 0 1px 0 0 #1e88e5;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.8em;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.provider-input {
+    margin-bottom: 20px;
+}
+
+#result p {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+}
+
+.btn.red {
+    margin-top: 10px;
+}
+
+#add-provider {
+    margin-bottom: 20px;
+}
+
+.switch {
+    margin-bottom: 20px;
+}
+
+.gray {
+    background-color: #ccc;
+}
+.addremove {
+    height: 24px;
+    line-height: 24px;
+    padding: 0 8px;
+}
+.total-commission {
+    font-size: 18px;
+    font-weight: bold;
+}
+.input-field {
+    margin-top: 1.5rem;
+}
+.card .card-content {
+    padding-top: 0;
+}

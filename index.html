@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commission Calculator</title>
+    <!-- Materialize CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-content">
+                <h4 class="center-align">Commission Calculator</h4>
+                <form id="calculator-form">
+                    <div class="input-field">
+                        <input type="text" id="project-price" name="project-price" required oninput="formatInput(this)">
+                        <label for="project-price">Project Price ($)</label>
+                        <span class="error-message" id="project-price-error"></span>
+                    </div>
+                    
+                    <div class="switch">
+                        <label>
+                            <input type="checkbox" id="include-providers" checked onchange="toggleProviders()">
+                            <span class="lever"></span>
+                            Expenses
+                        </label>
+                    </div>
+                    
+                    <div id="provider-container">
+                        <h5>Expenses</h5>
+                        <div class="provider-input" id="provider-0">
+                            <div class="input-field">
+                                <input type="text" id="provider-cost-0" name="provider-cost" placeholder="Provider Cost ($)" oninput="formatInput(this)">
+                                <label for="provider-cost-0">Provider Cost ($)</label>
+                                <span class="error-message" id="provider-cost-0-error"></span>
+                            </div>
+                            <a href="#" class="btn gray addremove" onclick="removeProvider('provider-0')"><i class="material-icons">delete</i></a>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="btn tooltipped addremove" id="add-provider" data-position="bottom" data-tooltip="Add Another Provider" onclick="addProvider()"><i class="material-icons">add</i></a>
+                    
+                    <div class="input-field">
+                        <input type="text" id="lead-cost" name="lead-cost" required oninput="formatInput(this)">
+                        <label for="lead-cost">Lead Cost ($)</label>
+                        <span class="error-message" id="lead-cost-error"></span>
+                    </div>
+                    
+                    <div class="input-field">
+                        <input type="number" id="share-percentage" name="share-percentage" required>
+                        <label for="share-percentage">Share Percentage with Owner (%)</label>
+                        <span class="error-message" id="share-percentage-error"></span>
+                    </div>
+                    
+                    <button type="button" class="btn waves-effect waves-light" onclick="calculateCommission()">Calculate Commission</button>
+                </form>
+                
+                <div id="result" class="center-align" style="display: none;">
+                    <h5>Results</h5>
+                    <p>Total Commission: $<span id="total-commission">0.00</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- Modal Structure -->
+    <div id="results-modal" class="modal" style="border-radius: 15px">
+        <div class="modal-content">
+            <table class="striped">
+                <tbody>
+                    <tr>
+                        <td><strong>Project Price:</strong></td>
+                        <td>$<span id="modal-project-price">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total Provider Cost:</strong></td>
+                        <td>$<span id="modal-total-provider-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lead Cost:</strong></td>
+                        <td>$<span id="modal-lead-cost">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Profit:</strong></td>
+                        <td>$<span id="modal-profit">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Commission:</strong></td>
+                        <td><span id="modal-total-commission" class="total-commission">0</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+        </div>
+    </div>
+
+    <!-- Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.tooltipped');
+            var instances = M.Tooltip.init(elems);
+        });
+            var modalElems = document.querySelectorAll('.modal');
+            var modalInstances = M.Modal.init(modalElems);
+    </script>
+</body>
+</html>
