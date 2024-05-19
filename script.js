@@ -101,7 +101,8 @@ function calculateCommission() {
         return;
     }
 
-    const totalCost = totalProviderCost + leadCost;
+    projectPrice = (projectProce * leadCost) / 100
+    const totalCost = totalProviderCost;
     const profit = projectPrice - totalCost;
     const commission = (profit * sharePercentage) / 100;
 
