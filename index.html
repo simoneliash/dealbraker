@@ -69,6 +69,9 @@
                 </div>
             </div>
         </div>
+        <div>
+            By Simon Eliash. <a class="modal-trigger" data-target="contact-modal">Contact Me</a>
+        </div>
     </div>
    <!-- Modal Structure -->
     <div id="results-modal" class="modal" style="border-radius: 15px">
@@ -103,6 +106,29 @@
         </div>
     </div>
 
+    <!-- Contact Modal Structure -->
+<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <form action="https://formspree.io/f/mjvnznrk" method="POST">
+            <div class="input-field">
+                <label for="email">
+                    Your email:
+                </label>
+                <input id="email" type="email" name="email">
+            </div>
+            <div class="input-field">
+                <label for="message">
+                    Your message:
+                </label>
+                <textarea class="materialize-textarea" id="message" name="message"></textarea>
+            </div>
+            <button class= "btn" type="submit">Send</button>
+            </form>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+    </div>
+</div>
     <!-- Materialize JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="script.js"></script>
