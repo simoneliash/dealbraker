@@ -64,7 +64,7 @@ function calculateCommission() {
     clearErrors();
     let valid = true;
     
-    const projectPrice = parseFloat(document.getElementById('project-price').value.replace(/,/g, ''));
+    var projectPrice = parseFloat(document.getElementById('project-price').value.replace(/,/g, ''));
     const leadCost = parseFloat(document.getElementById('lead-cost').value.replace(/,/g, ''));
     const sharePercentage = parseFloat(document.getElementById('share-percentage').value);
 
