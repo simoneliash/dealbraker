@@ -44,7 +44,6 @@ function toggleProviders() {
 }
 
 function formatInput(input) {
-    const value = input.value.replace(/,/g, '');
     if (!isNaN(value) && value !== '') {
         input.value = formatNumberWithCommas(value);
     }
