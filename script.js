@@ -136,6 +136,8 @@ function clearDefault(el) {
 function restoreDefault(el) {
     if (el.value === '') {
         el.value = '0';
+    } else {
+        el.value = formatNumber(parseFloat(el.value.replace(/,/g, '')));
     }
 }
 
