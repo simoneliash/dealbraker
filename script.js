@@ -127,4 +127,16 @@ document.querySelectorAll('input[type="text"]').forEach(input => {
     });
 });
 
+function clearDefault(el) {
+    if (el.value === '0') {
+        el.value = '';
+    }
+}
+
+function restoreDefault(el) {
+    if (el.value === '') {
+        el.value = '0';
+    }
+}
+
 toggleProviders();  // Initialize the provider section based on the checkbox state
