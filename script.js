@@ -100,16 +100,16 @@ function calculateCommission() {
     if (!valid) {
         return;
     }
-
-    projectPrice = (projectPrice * leadCost) / 100
+    leadCostAmount = (leadCost / 100) * projectPrice;
+    priceAfterLeadCost = projectPrice - leadCostAmount;
     const totalCost = totalProviderCost;
-    const profit = projectPrice - totalCost;
+    const profit = priceAfterLeadCost - totalCost;
     const commission = (profit * sharePercentage) / 100;
 
     // Display results in modal
     document.getElementById('modal-project-price').innerText = formatNumber(projectPrice);
     document.getElementById('modal-total-provider-cost').innerText = formatNumber(totalProviderCost);
-    document.getElementById('modal-lead-cost').innerText = formatNumber(leadCost);
+    document.getElementById('modal-lead-cost').innerText = formatNumber(leadCostAmount) + " (" + leadCost + "%)";
     document.getElementById('modal-profit').innerText = formatNumber(profit);
     document.getElementById('modal-total-commission').innerText = "$" + formatNumber(commission);
 
